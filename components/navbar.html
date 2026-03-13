@@ -1,0 +1,425 @@
+<!-- ============================================
+     NAVBAR — Dra. Nataly Cano | Psicóloga en Medellín
+     ============================================ -->
+<style>
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  background: transparent;
+}
+
+.navbar--scrolled {
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(13,43,78,0.08);
+  padding: 0.6rem 0;
+}
+
+.navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 1001;
+}
+
+.navbar__logo img {
+  height: 44px;
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+.navbar--scrolled .navbar__logo img {
+  height: 38px;
+}
+
+.navbar__logo-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.navbar__logo-text span {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.3s ease;
+}
+
+.navbar--scrolled .navbar__logo-text {
+  color: #0d2b4e;
+}
+
+.navbar--scrolled .navbar__logo-text span {
+  color: #94a3b8;
+}
+
+/* Menu */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navbar__item {
+  position: relative;
+}
+
+.navbar__link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.9rem;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.navbar--scrolled .navbar__link {
+  color: #475569;
+}
+
+.navbar__link:hover {
+  color: #ffffff;
+  background: rgba(255,255,255,0.1);
+}
+
+.navbar--scrolled .navbar__link:hover {
+  color: #2a6fa8;
+  background: rgba(42,111,168,0.06);
+}
+
+.navbar__link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+/* Dropdown */
+.navbar__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(13,43,78,0.14);
+  padding: 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1002;
+}
+
+.navbar__item:hover .navbar__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar__dropdown-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: #475569;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.navbar__dropdown-link:hover {
+  background: #eef7fd;
+  color: #2a6fa8;
+  padding-left: 1.25rem;
+}
+
+.navbar__dropdown-link small {
+  display: block;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* CTA */
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.25rem;
+  background: #25D366;
+  color: #ffffff !important;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  margin-left: 0.5rem;
+}
+
+.navbar__cta:hover {
+  background: #1eba57;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+}
+
+.navbar__cta svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Toggler Mobile */
+.navbar__toggler {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1001;
+}
+
+.navbar__toggler span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar--scrolled .navbar__toggler span {
+  background: #0d2b4e;
+}
+
+.navbar__toggler--active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.navbar__toggler--active span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__toggler--active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Overlay Mobile */
+.navbar__overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(13,43,78,0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar__overlay--visible {
+  opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 992px) {
+  .navbar__toggler {
+    display: flex;
+  }
+
+  .navbar__overlay {
+    display: block;
+    pointer-events: none;
+  }
+
+  .navbar__overlay--visible {
+    pointer-events: auto;
+  }
+
+  .navbar__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: stretch;
+    background: #ffffff;
+    padding: 5rem 1.5rem 2rem;
+    box-shadow: -8px 0 32px rgba(13,43,78,0.15);
+    transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+    overflow-y: auto;
+    z-index: 1000;
+    gap: 0;
+  }
+
+  .navbar__menu--open {
+    right: 0;
+  }
+
+  .navbar__link {
+    color: #475569;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+  }
+
+  .navbar__link:hover {
+    color: #2a6fa8;
+    background: rgba(42,111,168,0.06);
+  }
+
+  .navbar__dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    padding: 0 0 0 1rem;
+    display: none;
+  }
+
+  .navbar__item--dropdown-open .navbar__dropdown {
+    display: block;
+  }
+
+  .navbar__item--dropdown-open .navbar__link svg {
+    transform: rotate(180deg);
+  }
+
+  .navbar__cta {
+    margin: 1rem 0 0;
+    justify-content: center;
+    padding: 0.75rem;
+  }
+}
+</style>
+
+<nav class="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="navbar__inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="navbar__logo" aria-label="Inicio - Psicóloga Nataly Cano">
+      <img src="img/logo.png" alt="Psicóloga Nataly Cano en Medellín" width="44" height="44">
+      <div class="navbar__logo-text">
+        Nataly Cano
+        <span>Psicóloga en Medellín</span>
+      </div>
+    </a>
+
+    <!-- Toggler Mobile -->
+    <button class="navbar__toggler" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="navbar__menu">
+
+      <div class="navbar__item">
+        <a href="index.html" class="navbar__link">Inicio</a>
+      </div>
+
+      <!-- Categoría: Consultor de Salud -->
+      <div class="navbar__item">
+        <a href="consultor-de-salud-medellin.html" class="navbar__link navbar__dropdown-toggle">
+          Consultor de Salud
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="navbar__dropdown">
+          <a href="terapia-individual-medellin.html" class="navbar__dropdown-link">
+            Terapia Individual
+            <small>Atención personalizada</small>
+          </a>
+          <a href="apoyo-psicologico-crisis-emocional-medellin.html" class="navbar__dropdown-link">
+            Apoyo en Crisis Emocional
+            <small>Acompañamiento inmediato</small>
+          </a>
+          <a href="acompanamiento-espiritual-medellin.html" class="navbar__dropdown-link">
+            Acompañamiento Espiritual
+            <small>Bienestar integral</small>
+          </a>
+        </div>
+      </div>
+
+      <!-- Categoría: Psicólogo Infantil -->
+      <div class="navbar__item">
+        <a href="psicologo-infantil-medellin.html" class="navbar__link navbar__dropdown-toggle">
+          Psicólogo Infantil
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="navbar__dropdown">
+          <a href="terapia-familiar-medellin.html" class="navbar__dropdown-link">
+            Terapia Familiar
+            <small>Fortalecimiento del vínculo</small>
+          </a>
+          <a href="terapia-infantil-medellin.html" class="navbar__dropdown-link">
+            Terapia Infantil
+            <small>Desarrollo emocional infantil</small>
+          </a>
+        </div>
+      </div>
+
+      <!-- Categoría: Terapeuta Psicosocial -->
+      <div class="navbar__item">
+        <a href="terapeuta-psicosocial-medellin.html" class="navbar__link navbar__dropdown-toggle">
+          Terapeuta Psicosocial
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="navbar__dropdown">
+          <a href="terapia-ansiedad-medellin.html" class="navbar__dropdown-link">
+            Terapia para Ansiedad
+            <small>Recupera tu calma</small>
+          </a>
+          <a href="terapia-depresion-medellin.html" class="navbar__dropdown-link">
+            Terapia para Depresión
+            <small>Camino a la recuperación</small>
+          </a>
+          <a href="terapia-estres-medellin.html" class="navbar__dropdown-link">
+            Terapia para Estrés
+            <small>Manejo y equilibrio</small>
+          </a>
+          <a href="terapia-autoestima-medellin.html" class="navbar__dropdown-link">
+            Terapia para Autoestima
+            <small>Confianza y valor propio</small>
+          </a>
+        </div>
+      </div>
+
+      <div class="navbar__item">
+        <a href="#contacto" class="navbar__link">Contacto</a>
+      </div>
+
+      <!-- CTA WhatsApp -->
+      <a href="https://wa.me/573242901411?text=Hola%20Dra.%20Nataly%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20psicol%C3%B3gica%20en%20Medell%C3%ADn." class="navbar__cta" target="_blank" rel="noopener noreferrer" aria-label="Agendar cita por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar Cita
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Overlay Mobile -->
+  <div class="navbar__overlay"></div>
+</nav>

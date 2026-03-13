@@ -1,0 +1,137 @@
+<!-- ============================================
+     MAPA SECTION — Google Maps embebido
+     ============================================ -->
+<style>
+.mapa-seccion {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: #f0f4f8;
+}
+
+.mapa-seccion__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.mapa-seccion__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.mapa-seccion__info h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: #0d2b4e;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.mapa-seccion__info p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.mapa-seccion__datos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mapa-seccion__dato {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: #475569;
+}
+
+.mapa-seccion__dato-icono {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eef7fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2a6fa8;
+}
+
+.mapa-seccion__dato-icono svg {
+  width: 18px;
+  height: 18px;
+}
+
+.mapa-seccion__iframe {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(13,43,78,0.10);
+}
+
+.mapa-seccion__iframe iframe {
+  width: 100%;
+  height: 420px;
+  display: block;
+  border: none;
+}
+
+@media (max-width: 992px) {
+  .mapa-seccion__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .mapa-seccion__iframe iframe {
+    height: 320px;
+  }
+}
+</style>
+
+<section class="mapa-seccion" id="ubicacion">
+  <div class="mapa-seccion__inner">
+    <div class="mapa-seccion__grid">
+
+      <div class="mapa-seccion__info">
+        <p class="etiqueta-categoria">Ubicación</p>
+        <h2>Consultorio Psicológico en Medellín</h2>
+        <p>Nuestro espacio terapéutico se encuentra en el barrio Simón Bolívar de Medellín, un lugar accesible y tranquilo diseñado para que te sientas cómodo desde el primer momento. Agenda tu consulta y comienza tu camino hacia el bienestar emocional.</p>
+
+        <div class="mapa-seccion__datos">
+          <div class="mapa-seccion__dato">
+            <div class="mapa-seccion__dato-icono">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span>Cra. 86A #35c - 07, Simón Bolívar, Medellín</span>
+          </div>
+          <div class="mapa-seccion__dato">
+            <div class="mapa-seccion__dato-icono">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <a href="tel:+573242901411" style="color:#2a6fa8; font-weight:500;">+57 324 290 1411</a>
+          </div>
+          <div class="mapa-seccion__dato">
+            <div class="mapa-seccion__dato-icono">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span>Lunes a Sábado: 8:00 AM – 6:00 PM</span>
+          </div>
+        </div>
+
+        <a href="https://wa.me/573242901411?text=Hola%20Dra.%20Nataly%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20psicol%C3%B3gica%20en%20Medell%C3%ADn.%20%C2%BFC%C3%B3mo%20puedo%20llegar%20al%20consultorio%3F" class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          ¿Cómo Llegar? Escríbenos
+        </a>
+      </div>
+
+      <div class="mapa-seccion__iframe">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.135335865227!2d-75.6100852!3d6.2458902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e442937c8c5657d%3A0xab3b71be39ff2ff0!2sPsicologa%20en%20Medell%C3%ADn%20%7C%20Dra%20Nataly%20Cano%20Correa!5e0!3m2!1ses-419!2sco!4v1773420525537!5m2!1ses-419!2sco" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación del consultorio psicológico de la Dra. Nataly Cano en Medellín"></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>

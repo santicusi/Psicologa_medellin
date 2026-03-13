@@ -1,0 +1,180 @@
+<!-- ============================================
+     INFO SECTION — Sobre la Dra. Nataly Cano
+     ============================================ -->
+<style>
+.info-profesional {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: #ffffff;
+}
+
+.info-profesional__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.info-profesional__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.info-profesional__imagen {
+  position: relative;
+}
+
+.info-profesional__imagen img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(13,43,78,0.12);
+  object-fit: cover;
+  aspect-ratio: 4/5;
+}
+
+.info-profesional__imagen::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #5ba3d9;
+  border-radius: 20px 0 0 0;
+  opacity: 0.3;
+}
+
+.info-profesional__imagen::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #2a6fa8;
+  border-radius: 0 0 20px 0;
+  opacity: 0.3;
+}
+
+.info-profesional__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.info-profesional__contenido h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  color: #0d2b4e;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.info-profesional__contenido p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.info-profesional__valores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.info-profesional__valor {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #0d2b4e;
+}
+
+.info-profesional__valor-icono {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #eef7fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #2a6fa8;
+}
+
+.info-profesional__valor-icono svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 992px) {
+  .info-profesional__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .info-profesional__imagen {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .info-profesional__valores {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<section class="info-profesional">
+  <div class="info-profesional__inner">
+    <div class="info-profesional__grid">
+
+      <div class="info-profesional__imagen fade-in">
+        <img src="img/psicologa.jpg" alt="Psicóloga Nataly Cano en su consultorio en Medellín" width="500" height="625" loading="lazy">
+      </div>
+
+      <div class="info-profesional__contenido fade-in">
+        <p class="etiqueta-categoria">Sobre la Profesional</p>
+        <h2>Dra. Nataly Cano — Psicóloga en Medellín</h2>
+        <p>La Dra. Nataly Cano es una psicóloga profesional comprometida con el bienestar emocional de cada uno de sus pacientes en Medellín. Su enfoque terapéutico se centra en crear un espacio seguro, confidencial y libre de juicios donde puedas explorar tus emociones y encontrar herramientas concretas para mejorar tu calidad de vida.</p>
+        <p>Especializada en terapia individual, psicología infantil, acompañamiento en crisis emocionales y terapia psicosocial, la Dra. Nataly ofrece atención integral que abarca desde el manejo de la ansiedad y la depresión hasta el fortalecimiento de la autoestima y las relaciones familiares. Cada plan terapéutico se diseña de manera personalizada, respetando tu ritmo y tus necesidades particulares.</p>
+
+        <div class="info-profesional__valores">
+          <div class="info-profesional__valor">
+            <div class="info-profesional__valor-icono">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            Confidencialidad Total
+          </div>
+          <div class="info-profesional__valor">
+            <div class="info-profesional__valor-icono">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            Enfoque Humano
+          </div>
+          <div class="info-profesional__valor">
+            <div class="info-profesional__valor-icono">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            Atención Personalizada
+          </div>
+          <div class="info-profesional__valor">
+            <div class="info-profesional__valor-icono">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            Espacio Libre de Juicios
+          </div>
+        </div>
+
+        <a href="https://wa.me/573242901411?text=Hola%20Dra.%20Nataly%2C%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20su%20enfoque%20terap%C3%A9utico%20en%20Medell%C3%ADn." class="btn btn--primario" target="_blank" rel="noopener noreferrer" style="width:fit-content; margin-top:0.5rem;">
+          Conoce Más Sobre Mi Enfoque
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>

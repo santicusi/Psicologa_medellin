@@ -1,0 +1,381 @@
+/* ============================================
+   SERVICIO.CSS — Template reutilizable para
+   todas las páginas de servicio individual
+   Sin imágenes · Conversión · Sencillo
+   Depende de global.css (cargar primero)
+   ============================================ */
+
+/* ---------- Hero Compacto de Servicio ---------- */
+.srv-hero {
+  position: relative;
+  padding: clamp(9rem, 16vw, 12rem) 0 clamp(3.5rem, 7vw, 5rem);
+  background: var(--azul-oscuro);
+  overflow: hidden;
+}
+
+.srv-hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(91,163,217,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.srv-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -8%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(42,111,168,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.srv-hero__contenido {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.srv-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.srv-hero__breadcrumb a {
+  color: rgba(142,200,240,0.7);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.srv-hero__breadcrumb a:hover {
+  color: var(--blanco);
+}
+
+.srv-hero__breadcrumb .sep {
+  color: rgba(142,200,240,0.35);
+  font-size: 0.7rem;
+}
+
+.srv-hero__breadcrumb .actual {
+  color: rgba(212,236,251,0.55);
+}
+
+.srv-hero h1 {
+  color: var(--blanco);
+  font-size: clamp(1.9rem, 4.2vw, 2.8rem);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.srv-hero__descripcion {
+  font-size: clamp(0.98rem, 1.2vw, 1.1rem);
+  color: rgba(212,236,251,0.85);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.srv-hero__botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ---------- Caja Destacada (highlight box) ---------- */
+.srv-highlight {
+  background: linear-gradient(135deg, var(--azul-hielo) 0%, rgba(212,236,251,0.5) 100%);
+  border-left: 4px solid var(--azul-medio);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.75rem 2rem;
+  margin: 2rem 0;
+}
+
+.srv-highlight p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--azul-profundo);
+  margin-bottom: 0;
+}
+
+.srv-highlight strong {
+  color: var(--azul-oscuro);
+}
+
+/* ---------- Contenido Principal de Servicio ---------- */
+.srv-contenido {
+  padding: var(--section-py) 0;
+}
+
+.srv-contenido__bloque {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.srv-contenido__bloque h2 {
+  margin-bottom: 1rem;
+}
+
+.srv-contenido__bloque p {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--gris-texto);
+}
+
+/* ---------- Beneficios Grid ---------- */
+.srv-beneficios {
+  padding: var(--section-py) 0;
+  background: var(--gris-suave);
+}
+
+.srv-beneficios__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.srv-beneficio-card {
+  background: var(--blanco);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--sombra-suave);
+  transition: all var(--trans-media);
+  border-top: 3px solid transparent;
+}
+
+.srv-beneficio-card:hover {
+  border-top-color: var(--azul-medio);
+  box-shadow: var(--sombra-media);
+  transform: translateY(-3px);
+}
+
+.srv-beneficio-card__icono {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--azul-hielo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+  color: var(--azul-medio);
+}
+
+.srv-beneficio-card__icono svg {
+  width: 24px;
+  height: 24px;
+}
+
+.srv-beneficio-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.srv-beneficio-card p {
+  font-size: 0.88rem;
+  color: var(--gris-medio);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* ---------- Sección ¿Para quién? / Indicaciones ---------- */
+.srv-para-quien {
+  padding: var(--section-py) 0;
+}
+
+.srv-para-quien__bloque {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.srv-para-quien__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.srv-para-quien__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.93rem;
+  color: var(--gris-oscuro);
+  line-height: 1.6;
+  padding: 0.85rem 1.25rem;
+  background: var(--marfil);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--azul-claro);
+  transition: all var(--trans-rapida);
+}
+
+.srv-para-quien__item:hover {
+  border-left-color: var(--azul-medio);
+  background: var(--azul-hielo);
+}
+
+.srv-para-quien__item::before {
+  content: '';
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--azul-medio);
+  border-radius: 50%;
+  margin-top: 7px;
+}
+
+/* ---------- Sección Proceso del Servicio ---------- */
+.srv-proceso {
+  padding: var(--section-py) 0;
+  background: var(--azul-oscuro);
+  color: var(--blanco);
+}
+
+.srv-proceso h2 {
+  color: var(--blanco);
+}
+
+.srv-proceso p.sub {
+  color: rgba(212,236,251,0.7);
+}
+
+.srv-proceso__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  counter-reset: srv-pasos;
+}
+
+.srv-proceso__paso {
+  counter-increment: srv-pasos;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.srv-proceso__paso::before {
+  content: counter(srv-pasos, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: rgba(142,200,240,0.25);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.srv-proceso__paso h3 {
+  color: var(--blanco);
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.srv-proceso__paso p {
+  font-size: 0.88rem;
+  color: rgba(212,236,251,0.7);
+  line-height: 1.65;
+}
+
+/* ---------- Contenido SEO Adicional ---------- */
+.srv-extra {
+  padding: var(--section-py) 0;
+  background: var(--azul-hielo);
+}
+
+.srv-extra__bloque {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.srv-extra__bloque h2 {
+  margin-bottom: 1rem;
+}
+
+.srv-extra__bloque p {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--gris-texto);
+}
+
+/* ---------- CTA de Servicio ---------- */
+.srv-cta {
+  background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-profundo) 50%, var(--azul-medio) 100%);
+  text-align: center;
+  padding: var(--section-py) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.srv-cta::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(91,163,217,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.srv-cta h2 {
+  color: var(--blanco);
+  margin-bottom: 1rem;
+}
+
+.srv-cta p {
+  color: var(--azul-palido);
+  max-width: 550px;
+  margin: 0 auto 2rem;
+  font-size: 1.02rem;
+}
+
+.srv-cta .btn {
+  font-size: 1rem;
+  padding: 1rem 2.5rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .srv-hero {
+    padding: clamp(7rem, 12vw, 9rem) 0 clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .srv-hero__botones {
+    flex-direction: column;
+  }
+
+  .srv-hero__botones .btn {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .srv-highlight {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .srv-beneficios__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .srv-proceso__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .srv-para-quien__item {
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+  }
+}
