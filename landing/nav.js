@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ── WHATSAPP TRACKING ───────────────────────────────── */
-  const WSP_NUMBER = '573242901411';
+  const WSP_NUMBER = '573052555120';
   const WSP_MSG_DEFAULT = encodeURIComponent(
     'Hola Dra. Natalia, me gustaría agendar una consulta psicológica en Medellín. ¿Cuándo hay disponibilidad?'
   );
