@@ -1,5 +1,5 @@
 /* ============================================================
-   nav.js — Dra. Nataly Cano | Navegación + WhatsApp Tracking
+   nav.js — Dra. Natalia Jimenez | Navegación + WhatsApp Tracking
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── WHATSAPP TRACKING ───────────────────────────────── */
   const WSP_NUMBER = '573242901411';
   const WSP_MSG_DEFAULT = encodeURIComponent(
-    'Hola Dra. Nataly, me gustaría agendar una consulta psicológica en Medellín. ¿Cuándo hay disponibilidad?'
+    'Hola Dra. Natalia, me gustaría agendar una consulta psicológica en Medellín. ¿Cuándo hay disponibilidad?'
   );
 
   function buildWspUrl(msg) {
